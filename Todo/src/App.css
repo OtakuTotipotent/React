@@ -1,0 +1,28 @@
+body {
+  background-color: #333 !important;
+}
+
+h1 {
+  color: olive !important;
+  font-family: Poppins;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  margin: 1rem !important;
+}
+
+input {
+  width: 100%;
+  padding: 4px;
+  text-align: center;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+
+.todo-container {
+  margin-top: 2rem;
+}
+
+.item-container {
+  color: #aaa;
+}

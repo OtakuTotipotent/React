@@ -1,0 +1,9 @@
+.container {
+  min-width: 80%;
+  max-width: 500px;
+  border: 2px solid palevioletred;
+  display: grid;
+  gap: 2rem;
+  padding: 1rem;
+  border-radius: 10px;
+}

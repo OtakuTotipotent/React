@@ -1,0 +1,9 @@
+.container {
+  /* width: 40%; */
+  min-width: 240px;
+  max-width: 400px;
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}

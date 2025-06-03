@@ -1,0 +1,36 @@
+.btnContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+}
+
+.btn {
+  font-size: 1.4rem;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: .16s linear;
+  text-align: center;
+}
+
+.btn:hover {
+  font-weight: bold;
+}
+
+.symbol {
+  color: aqua;
+  background-color: black;
+}
+
+.symbol:hover {
+  filter: opacity(0.5);
+}
+
+.num:hover {
+  border: 2px solid royalblue;
+  background-color: transparent;
+  color: royalblue;
+}

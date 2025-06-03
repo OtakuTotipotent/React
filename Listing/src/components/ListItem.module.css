@@ -1,0 +1,10 @@
+/* .listItem {
+  background-color: gray;
+  color: white;
+  transition: .2s linear;
+} */
+
+.listItem:hover {
+  background-color: transparent;
+  color: black;
+}

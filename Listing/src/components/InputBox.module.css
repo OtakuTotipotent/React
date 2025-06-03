@@ -1,0 +1,11 @@
+.inputBox {
+  width: 100%;
+  border: 1px solid #999;
+  padding: 10px;
+  outline: none;
+  margin: 10px auto;
+  background-color: #ccc;
+  border-radius: 3px;
+  font-weight: bold;
+  font-family: Karla;
+}
