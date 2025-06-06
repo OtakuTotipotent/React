@@ -1,47 +1,36 @@
-// Imports & Packages
-import AppName from "./components/AppName";
-import AddTodo from "./components/AddTodo";
-import TodoContainer from "./components/TodoContainer";
-import "./App.css";
 import { useState } from "react";
+import { TodoItemsData } from "./store/items-data";
+import AppName from "./components/AppName";
+import AddTodo from "./components/UserInputBar";
+import TodoContainer from "./components/TodoContainer";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 function App() {
-    const data = [
-        {
-            name: "Fix React Project",
-            dueDate: "Jan/27/2026",
-        },
-        {
-            name: "Complete Node JS",
-            dueDate: "Mar/22/2026",
-        },
-        {
-            name: "Go through Django",
-            dueDate: "Dec/01/2025",
-        },
-    ];
-    const [data_todo, updateDataTodo] = useState(data);
-    const addDataToList = (args) => {
-        const newData = [...data_todo, args];
-        updateDataTodo(newData);
+    const [data, updateData] = useState([
+        { name: "Todo Text", dueDate: "Task deadline" },
+    ]);
+
+    const addTodoFunc = (todoData) => {
+        const newItemData = [...data, todoData];
+        updateData(newItemData);
     };
-    const deleteDataFromList = (args) => {
-        const newData = data_todo.filter((obj) => {
-            if (
-                obj["name"] !== args["name"] &&
-                obj["dueDate"] !== args["dueDate"]
-            ) {
-                return obj;
-            }
-        });
-        updateDataTodo(newData);
+
+    const deleteTodoFunc = (targetItem) => {
+        const newItemData = data.filter(
+            (element) => element.name !== targetItem.name
+        );
+        updateData(newItemData);
     };
+
     return (
-        <center>
-            <AppName />
-            <AddTodo todoFunc={addDataToList} />
-            <TodoContainer todo={data_todo} deleteData={deleteDataFromList} />
-        </center>
+        <TodoItemsData.Provider value={{ data, addTodoFunc, deleteTodoFunc }}>
+            <center>
+                <AppName />
+                <AddTodo />
+                <TodoContainer />
+            </center>
+        </TodoItemsData.Provider>
     );
 }
 
