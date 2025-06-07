@@ -1,14 +1,15 @@
-function TodoItem({ data, deleteData }) {
-    const dataDeletionFunc = () => {
-        deleteData(data);
-    };
+import { useContext } from "react";
+import { TodoItemsData } from "../store/TodoItemsData";
+
+function TodoItem({ data }) {
+    const { deleteTask } = useContext(TodoItemsData);
     return (
-        <div className="row text-center my-2">
-            <div className="col-5">{data.name}</div>
-            <div className="col-5">{data.dueDate}</div>
-            <div className="col-2">
-                <button className="btn btn-danger" onClick={dataDeletionFunc}>
-                    Del
+        <div className="container item">
+            <div className="an-item">{data.name}</div>
+            <div className="an-item date">{data.dueDate}</div>
+            <div>
+                <button className="btn del" onClick={() => deleteTask(data)}>
+                    Done
                 </button>
             </div>
         </div>

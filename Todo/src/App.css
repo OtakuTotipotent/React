@@ -1,28 +1,139 @@
 body {
-  background-color: #333 !important;
+  background-color: #333;
+}
+
+::selection {
+  background-color: black;
+  color: olive;
+}
+
+::-webkit-scrollbar {
+  background-color: #222;
+  border-radius: 10px;
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: black;
+}
+
+.container {
+  max-width: 640px;
+  margin: auto;
+  box-sizing: border-box;
 }
 
 h1 {
-  color: olive !important;
+  color: olive;
   font-family: Poppins;
   font-size: 2.5rem;
   font-weight: bolder;
-  margin: 1rem !important;
+  margin-block: 2rem !important;
+  cursor: default;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
 }
 
 input {
   width: 100%;
-  padding: 4px;
-  text-align: center;
+  padding: 6px 20px;
+  font-size: 1rem;
   border-radius: 20px;
   border: none;
+  outline: 2px solid transparent;
+  transition: .2s linear;
+  opacity: 0.6;
+}
+
+input:hover,
+input:focus {
+  outline: 2px solid olive;
+  opacity: 1;
+}
+
+.btn {
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: 'Poppins';
+  border: none;
   outline: none;
+  padding: 0 24px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: .2s linear;
+  opacity: 0.6;
 }
 
-.todo-container {
+.btn:hover,
+.btn:focus {
+  opacity: 1;
+}
+
+.add {
+  color: white;
+  background-color: olive;
+}
+
+.del {
+  color: white;
+  padding: 5px 16px;
+  background-color: rgba(10, 128, 12, 0.5);
+}
+
+.taskContainer {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
   margin-top: 2rem;
+  padding: 1rem;
+  height: 70vh;
+  overflow-y: auto;
+  border-radius: 10px;
+  display: grid;
+  align-content: start;
+  gap: 2px;
 }
 
-.item-container {
-  color: #aaa;
+.item {
+  width: 100%;
+  padding: 6px;
+  display: grid;
+  grid-template-columns: 6fr 3fr 1fr;
+  border-radius: 6px;
+  background-color: #333;
+  transition: .2s linear;
+  align-items: center;
+  justify-items: end;
+  gap: 10px;
+}
+
+.date {
+  text-align: center;
+}
+
+.an-item {
+  width: 100%;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "poppins";
+}
+
+.item:hover {
+  background-color: transparent;
+}
+
+.welcome {
+  width: 100%;
+  text-align: center;
+  font-size: 1.3rem;
+  font-family: monospace;
+  color: #666;
+  border-radius: 5px;
+  padding: 10px 0;
+  font-weight: bold;
+  margin-top: 3rem;
 }

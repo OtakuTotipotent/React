@@ -1,50 +1,38 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
+import { TodoItemsData } from "../store/TodoItemsData";
 
-function AddTodo({ addTodoFunc }) {
-    const todoTextInput = useRef("");
-    const todoDateInput = useRef("");
+function UserInputBar() {
+    const textRef = useRef("");
+    const dateRef = useRef("");
+    const { addTask } = useContext(TodoItemsData);
 
-    const addTodoHandler = (event) => {
+    const taskHandler = (event) => {
         event.preventDefault();
-        const todoText = todoTextInput.current.value;
-        const todoDate = todoDateInput.current.value;
-        todoTextInput.current.value = "";
-        todoDateInput.current.value = "";
+        const todoText = textRef.current.value;
+        const todoDate = dateRef.current.value;
+        textRef.current.value = "";
+        dateRef.current.value = "";
 
-        addTodoFunc({
+        addTask({
             name: todoText,
             dueDate: todoDate,
         });
     };
 
     return (
-        <div className="container todo-container">
-            <form className="row" onSubmit={addTodoHandler}>
-                <div className="col-5">
-                    <input
-                        type="text"
-                        id="todo-text"
-                        placeholder="Enter Todo item"
-                        required
-                        ref={todoTextInput}
-                    />
-                </div>
-                <div className="col-5">
-                    <input
-                        type="date"
-                        id="todo-date"
-                        ref={todoDateInput}
-                        required
-                    />
-                </div>
-                <div className="col-2">
-                    <button className="btn btn-success" type="submit">
-                        Add
-                    </button>
-                </div>
-            </form>
-        </div>
+        <form className="container form" onSubmit={taskHandler}>
+            <input
+                type="text"
+                placeholder="Enter Todo item"
+                required
+                ref={textRef}
+            />
+            <input type="date" ref={dateRef} required />
+            <button className="btn add" type="submit">
+                Add
+            </button>
+        </form>
     );
 }
 
-export default AddTodo;
+export default UserInputBar;
