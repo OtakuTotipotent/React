@@ -1,22 +1,8 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-
 function Header() {
     return (
-        <header className="p-3 text-bg-dark">
+        <header className="p-3 text-bg-dark header">
             <div className="container">
                 <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                    <a
-                        href="/"
-                        className="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                        <svg
-                            className="bi me-2"
-                            width="40"
-                            height="32"
-                            role="img"
-                            aria-label="bootstrap">
-                            <use xlinkHref="#bootstrap"></use>
-                        </svg>
-                    </a>
                     <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0 justify-content-center">
                         <li>
                             <a href="#" className="nav-link px-2 text-warning">
@@ -48,10 +34,10 @@ function Header() {
                         className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"
                         role="search">
                         <input
+                            className="form-control form-control-dark text-bg-dark text-warning"
                             type="search"
-                            placeholder="search..."
+                            placeholder="search anything here..."
                             aria-label="search"
-                            className="form-control form-control-dark"
                         />
                     </form>
                     <div className="text-end">

@@ -1,25 +1,29 @@
-import { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import PostCreate from "./components/PostCreate";
-import PostsList from "./components/PostsList";
+import { useState } from "react";
+import PostListProvider from "./store/PostListProvider";
 import Sidebar from "./components/Sidebar";
+import Header from "./components/Header";
+import PostsList from "./components/PostsList";
+import PostCreate from "./components/PostCreate";
+import Footer from "./components/Footer";
 
 function App() {
     const [activeTab, setActiveTab] = useState("Home");
 
     return (
-        <div className="app-container">
-            <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
-            <div className="app-content">
-                <Header />
+        <PostListProvider>
+            <div className="app-container">
+                <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+                <div className="app-content">
+                    <Header />
 
-                {activeTab === "Home" ? <PostsList /> : <PostCreate />}
+                    {activeTab === "Home" ? <PostsList /> : <PostCreate />}
 
-                <Footer />
+                    <Footer />
+                </div>
             </div>
-        </div>
+        </PostListProvider>
     );
 }
 

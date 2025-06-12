@@ -1,3 +1,8 @@
+body {
+  background-color: rgb(33, 37, 41) !important;
+  overflow-x: hidden;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -10,6 +15,95 @@
   width: 100%;
 }
 
+.header {
+  background-color: transparent !important;
+  border-bottom: 1px solid #ffc107;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(32px);
+  z-index: 100;
+}
+
+.header input[type="search"]::placeholder {
+  color: white;
+}
+
 .sidebar {
-  min-height: 100vh;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-right: 1px solid #ffc107;
+}
+
+.post-container {
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.post-card {
+  flex-basis: 300px;
+  background-color: rgb(248, 249, 250, 0.05) !important;
+  backdrop-filter: blur(10px) !important;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: 0.2s ease all;
+}
+
+.post-card:hover {
+  opacity: 0.9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.post-btns {
+  border-top: 1px solid #ffc107;
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.post-btns .badge:hover {
+  color: #ffc107 !important;
+  cursor: none;
+  background-color: transparent !important;
+}
+
+.post-delete-icon {
+  cursor: pointer;
+  transition: .3s linear;
+}
+
+.post-delete-icon:hover {
+  color: red !important;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.footer {
+  border-top: 1px solid #ffc107;
+}
+
+.form {
+  color: #ffc107;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 400px;
+  margin: 3rem auto;
+  padding: 1.6rem 2.5rem !important;
+  border-radius: 25px;
+  transition: .3s linear;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.08);
+}
+
+.form:hover,
+.form:focus {
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
 }
